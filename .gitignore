@@ -1,0 +1,18 @@
+# Zola output
+public/
+
+# Historical archive
+stare/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if Bootstrap via npm)
+node_modules/
