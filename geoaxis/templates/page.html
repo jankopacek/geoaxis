@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — Geoaxis{% endblock title %}
+
+{% block description %}{{ page.description | default(value='') }}{% endblock description %}
+
+{% block content %}
+<section class="bg-primary text-white py-4">
+    <div class="container">
+        <h1 class="display-5 fw-bold">{{ page.title }}</h1>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        {{ page.content | safe }}
+    </div>
+</section>
+{% endblock content %}

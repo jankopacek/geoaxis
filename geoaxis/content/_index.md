@@ -1,6 +1,6 @@
 +++
-title = "Geoaxis, s.r.o."
+title = "Geoaxis"
 description = "Geodetické a zeměměřické služby"
 +++
 
-Vítejte na stránkách společnosti **Geoaxis, s.r.o.** — váš spolehlivý partner v oblasti geodézie a zeměměřictví.
+Vítejte na stránkách společnosti **Geoaxis** — váš spolehlivý partner v oblasti geodézie a zeměměřictví.

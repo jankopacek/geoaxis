@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://www.geoaxis.cz"
 default_language = "cs"
-title = "Geoaxis, s.r.o."
+title = "Geoaxis"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -21,7 +21,7 @@ theme = "catppuccin-mocha"
 toggle_nav = "Přepnout navigaci"
 
 [languages.en]
-title = "Geoaxis, s.r.o."
+title = "Geoaxis"
 
 [languages.en.translations]
 toggle_nav = "Toggle navigation"

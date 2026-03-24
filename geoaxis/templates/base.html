@@ -21,9 +21,11 @@
                         {% set index = get_section(path="_index.md") %}
                         {% for subsection_path in index.subsections %}
                             {% set subsection = get_section(path=subsection_path) %}
+                            {% if not subsection.extra.hide_from_nav %}
                             <li class="nav-item">
                                 <a class="nav-link{% if current_path and current_path is starting_with(subsection.path) %} active{% endif %}" href="{{ subsection.permalink }}">{{ subsection.title }}</a>
                             </li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
                 </div>
@@ -36,8 +38,27 @@
     </main>
 
     <footer class="bg-dark text-light py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">&copy; {{ now() | date(format='%Y') }} geoaxis.cz</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Geoaxis</h5>
+                    <p class="mb-1">IČO: 24123013</p>
+                    <p class="mb-0">DIČ: CZ24123013</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Adresa</h5>
+                    <p class="mb-1">Gen. L. Svobody 609</p>
+                    <p class="mb-0">281 61 Kouřim</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Kontakt</h5>
+                    <p class="mb-1">Jaroslav Jasenovský</p>
+                    <p class="mb-1">+420 602 139 032</p>
+                    <p class="mb-0"><a href="mailto:info@geoaxis.cz" class="text-light">info@geoaxis.cz</a></p>
+                </div>
+            </div>
+            <hr class="my-3">
+            <p class="text-center mb-0">&copy; {{ now() | date(format='%Y') }} geoaxis.cz</p>
         </div>
     </footer>
 
