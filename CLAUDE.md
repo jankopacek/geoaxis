@@ -21,15 +21,7 @@ Static website for Czech geodetic/surveying company **Geoaxis, s.r.o.** (www.geo
 geoaxis/
 ├── config.toml          # Zola config (base_url, languages, taxonomies)
 ├── content/
-│   ├── _index.md        # Home page (CS)
-│   ├── sluzby/          # Services section
-│   │   ├── _index.md
-│   │   ├── geom-plany.md
-│   │   ├── inzenyrstvi.md
-│   │   ├── mapove-podklady.md
-│   │   ├── pasport.md
-│   │   └── dron.md
-│   └── kontakt.md
+│   └── _index.md        # Home page (CS)
 ├── templates/
 │   ├── base.html        # Base layout (navbar, footer, Bootstrap 5 CDN)
 │   └── index.html       # Home page template

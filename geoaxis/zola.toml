@@ -1,0 +1,30 @@
+# The URL the site will be built for
+base_url = "https://www.geoaxis.cz"
+default_language = "cs"
+title = "Geoaxis, s.r.o."
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+minify_html = false
+generate_robots_txt = true
+
+[markdown]
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[languages.cs.translations]
+toggle_nav = "Přepnout navigaci"
+
+[languages.en]
+title = "Geoaxis, s.r.o."
+
+[languages.en.translations]
+toggle_nav = "Toggle navigation"
+
+[extra]
+# Put all your custom variables here

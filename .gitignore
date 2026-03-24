@@ -16,3 +16,6 @@ Thumbs.db
 
 # Node (if Bootstrap via npm)
 node_modules/
+
+# Environment
+.env

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block description %}{{ section.description | default(value=config.description | default(value='')) }}{% endblock description %}">
+    <title>{% block title %}{{ config.title | default(value='Geoaxis') }}{% endblock title %}</title>
+    <link rel="stylesheet" href="{{ get_url(path='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ get_url(path='css/custom.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="{{ get_url(path='@/_index.md') }}">Geoaxis</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="{{ trans(key="toggle_nav", lang=lang) }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        {% set index = get_section(path="_index.md") %}
+                        {% for subsection_path in index.subsections %}
+                            {% set subsection = get_section(path=subsection_path) %}
+                            <li class="nav-item">
+                                <a class="nav-link{% if current_path and current_path is starting_with(subsection.path) %} active{% endif %}" href="{{ subsection.permalink }}">{{ subsection.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; {{ now() | date(format='%Y') }} geoaxis.cz</p>
+        </div>
+    </footer>
+
+    <script src="{{ get_url(path='js/bootstrap.bundle.min.js') }}" defer></script>
+    {% block scripts %}{% endblock scripts %}
+</body>
+</html>
