@@ -2,35 +2,49 @@
 
 ## Project Overview
 
-Static website for Czech geodetic/surveying company **Geoaxis, s.r.o.** (www.geoaxis.cz).
+Static website for Czech geodetic/surveying company **Geoaxis** (www.geoaxis.cz).
 
 ---
 
 ## Tech Stack
 
 - **Generator:** [Zola](https://www.getzola.org/) (Rust-based static site generator)
-- **CSS framework:** [Bootstrap 5](https://getbootstrap.com/) (via CDN or npm)
+- **CSS framework:** [Bootstrap 5](https://getbootstrap.com/) (local, installed via npm)
 - **Languages:** Czech (primary), English (translation) — Zola i18n
 - **Deployment:** static files, domain `www.geoaxis.cz`
+- **Demo:** GitHub Pages — https://jankopacek.github.io/geoaxis/
 
 ---
 
 ## Project Structure
 
 ```
+.github/
+└── workflows/
+    └── deploy.yml       # GitHub Pages deployment
 geoaxis/
-├── config.toml          # Zola config (base_url, languages, taxonomies)
+├── zola.toml            # Zola config (base_url, languages, translations)
 ├── content/
-│   └── _index.md        # Home page (CS)
+│   ├── _index.md        # Home page (CS)
+│   └── sluzby/
+│       ├── _index.md    # Services section (hidden from nav)
+│       ├── geometricke-plany.md
+│       ├── inzenyrska-geodezie.md
+│       ├── letecke-snimkovani.md
+│       ├── mapove-podklady.md
+│       └── pasport-stavby.md
 ├── templates/
-│   ├── base.html        # Base layout (navbar, footer, Bootstrap 5 CDN)
-│   └── index.html       # Home page template
+│   ├── base.html        # Base layout (navbar, footer, Bootstrap 5)
+│   ├── index.html       # Home page template
+│   ├── section.html     # Generic section template
+│   └── page.html        # Generic page template
 ├── static/
 │   ├── img/             # Images (optimized WebP + fallback)
 │   ├── css/
+│   │   ├── bootstrap.min.css  # Bootstrap 5 (from npm)
 │   │   └── custom.css   # Custom CSS on top of Bootstrap 5
 │   └── js/
-│       └── custom.js    # Custom JS (if needed)
+│       └── bootstrap.bundle.min.js  # Bootstrap 5 JS (from npm)
 ├── sass/                # Optional: SCSS compiled by Zola
 ├── stare/               # Archive — ignored by git
 └── .gitignore
@@ -71,8 +85,8 @@ geoaxis/
 
 - Primary language: `cs` (default, no URL prefix)
 - Secondary language: `en` (URL prefix `/en/`)
-- Zola i18n via `[languages]` in `config.toml` and `trans()` macro in templates.
-- UI translations (navbar, footer) in `i18n/cs.toml` and `i18n/en.toml`.
+- Zola i18n via `[languages.<lang>.translations]` in `zola.toml` and `trans()` macro in templates.
+- **Note:** Zola 0.22 does NOT read translations from `i18n/*.toml` files — they must be in `zola.toml`.
 
 ### Images
 
@@ -105,6 +119,9 @@ public/
 ## Commands
 
 ```bash
+# All Zola commands run from the geoaxis/ subdirectory
+cd geoaxis
+
 # Start dev server
 zola serve
 
