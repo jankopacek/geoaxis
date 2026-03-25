@@ -19,12 +19,14 @@ theme = "catppuccin-mocha"
 
 [languages.cs.translations]
 toggle_nav = "Přepnout navigaci"
+home = "Úvodní stránka"
 
 [languages.en]
 title = "Geoaxis"
 
 [languages.en.translations]
 toggle_nav = "Toggle navigation"
+home = "Home"
 
 [extra]
 # Put all your custom variables here

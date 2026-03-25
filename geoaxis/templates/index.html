@@ -24,15 +24,16 @@
         <div class="row g-4">
             {% for page in sluzby.pages %}
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title h5">{{ page.title }}</h3>
-                        {% if page.description %}
-                        <p class="card-text">{{ page.description }}</p>
-                        {% endif %}
-                        <a href="{{ page.permalink }}" class="btn btn-primary">{{ page.title }}</a>
+                <a href="{{ page.permalink }}" class="card-link">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">{{ page.title }}</h3>
+                            {% if page.description %}
+                            <p class="card-text">{{ page.description }}</p>
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             {% endfor %}
         </div>

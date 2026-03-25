@@ -4,8 +4,25 @@
 
 {% block description %}{{ page.description | default(value='') }}{% endblock description %}
 
+{% block breadcrumbs %}
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+        <ol class="breadcrumb mb-0 py-2">
+            <li class="breadcrumb-item"><a href="{{ get_url(path='@/_index.md') }}">{{ trans(key="home", lang=lang) }}</a></li>
+            {% for ancestor_path in page.ancestors %}
+                {% if not loop.first %}
+                    {% set ancestor = get_section(path=ancestor_path) %}
+                    <li class="breadcrumb-item"><a href="{{ ancestor.permalink }}">{{ ancestor.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+            <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+        </ol>
+    </div>
+</nav>
+{% endblock breadcrumbs %}
+
 {% block content %}
-<section class="bg-primary text-white py-4">
+<section class="hero bg-primary text-white py-4">
     <div class="container">
         <h1 class="display-5 fw-bold">{{ page.title }}</h1>
     </div>

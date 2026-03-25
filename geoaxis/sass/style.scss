@@ -1,0 +1,35 @@
+// Geoaxis dark blue theme — Bootstrap variable overrides
+// These must come BEFORE the Bootstrap import
+
+// Core colors
+$body-bg: #0b1221;
+$body-color: #f0f4f8;
+$primary: #3b82f6;
+$dark: #060d19;
+$light: #c8d6e5;
+
+// Cards
+$card-bg: #121d33;
+$card-border-color: #1e2d45;
+$card-color: #f0f4f8;
+
+// Navbar
+$navbar-dark-color: rgba(255, 255, 255, 0.8);
+$navbar-dark-hover-color: #fff;
+
+// Links
+$link-color: #60a5fa;
+$link-hover-color: #93bbfc;
+
+// Borders & dividers
+$border-color: #1e2d45;
+$hr-color: #1e2d45;
+$hr-opacity: 0.5;
+
+// Forms
+$input-bg: #121d33;
+$input-color: #f0f4f8;
+$input-border-color: #1e2d45;
+
+// Import full Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";

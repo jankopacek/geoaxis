@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% block description %}{{ section.description | default(value=config.description | default(value='')) }}{% endblock description %}">
     <title>{% block title %}{{ config.title | default(value='Geoaxis') }}{% endblock title %}</title>
-    <link rel="stylesheet" href="{{ get_url(path='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
     <link rel="stylesheet" href="{{ get_url(path='css/custom.css') }}">
 </head>
 <body>
@@ -18,6 +18,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link{% if current_path == '/' %} active{% endif %}" href="{{ get_url(path='@/_index.md') }}">{{ trans(key="home", lang=lang) }}</a>
+                        </li>
                         {% set index = get_section(path="_index.md") %}
                         {% for subsection_path in index.subsections %}
                             {% set subsection = get_section(path=subsection_path) %}
@@ -32,6 +35,8 @@
             </div>
         </nav>
     </header>
+
+    {% block breadcrumbs %}{% endblock breadcrumbs %}
 
     <main>
         {% block content %}{% endblock content %}

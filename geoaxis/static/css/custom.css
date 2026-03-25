@@ -1,1 +1,78 @@
-/* Geoaxis custom styles */
+/* Geoaxis custom styles — dark blue theme */
+
+/* Hero section gradient */
+.hero {
+    background: linear-gradient(135deg, #1a56db 0%, #1e3a5f 100%);
+}
+
+/* Clickable card links */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+/* Cards on dark background */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.card-link:hover .card {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer links */
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Content sections on dark bg need light text */
+section.py-5 {
+    color: #f0f4f8;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #f0f4f8;
+}
+
+/* Navbar brand */
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Muted/secondary text */
+.text-muted {
+    color: #94a3b8;
+}
+
+/* Breadcrumbs */
+.breadcrumb-nav {
+    background-color: #0e1a2e;
+    font-size: 0.875rem;
+}
+
+.breadcrumb-nav .breadcrumb-item a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+.breadcrumb-nav .breadcrumb-item a:hover {
+    color: #93bbfc;
+}
+
+.breadcrumb-nav .breadcrumb-item.active {
+    color: #94a3b8;
+}
+
+.breadcrumb-nav .breadcrumb-item + .breadcrumb-item::before {
+    color: #4a5568;
+}

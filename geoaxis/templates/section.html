@@ -4,6 +4,25 @@
 
 {% block description %}{{ section.description | default(value='') }}{% endblock description %}
 
+{% block breadcrumbs %}
+{% if section.ancestors | length > 1 %}
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+        <ol class="breadcrumb mb-0 py-2">
+            <li class="breadcrumb-item"><a href="{{ get_url(path='@/_index.md') }}">{{ trans(key="home", lang=lang) }}</a></li>
+            {% for ancestor_path in section.ancestors %}
+                {% if not loop.first %}
+                    {% set ancestor = get_section(path=ancestor_path) %}
+                    <li class="breadcrumb-item"><a href="{{ ancestor.permalink }}">{{ ancestor.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+            <li class="breadcrumb-item active" aria-current="page">{{ section.title }}</li>
+        </ol>
+    </div>
+</nav>
+{% endif %}
+{% endblock breadcrumbs %}
+
 {% block content %}
 <section class="bg-primary text-white py-5">
     <div class="container text-center">
@@ -22,15 +41,16 @@
         <div class="row g-4 mt-3">
             {% for page in section.pages %}
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title h5">{{ page.title }}</h3>
-                        {% if page.description %}
-                        <p class="card-text">{{ page.description }}</p>
-                        {% endif %}
-                        <a href="{{ page.permalink }}" class="btn btn-primary">{{ page.title }}</a>
+                <a href="{{ page.permalink }}" class="card-link">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">{{ page.title }}</h3>
+                            {% if page.description %}
+                            <p class="card-text">{{ page.description }}</p>
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             {% endfor %}
         </div>
