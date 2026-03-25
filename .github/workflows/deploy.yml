@@ -25,6 +25,10 @@ jobs:
           curl -sL https://github.com/getzola/zola/releases/download/v0.22.1/zola-v0.22.1-x86_64-unknown-linux-gnu.tar.gz | tar xz
           sudo mv zola /usr/local/bin/
 
+      - name: Install npm dependencies
+        run: npm install
+        working-directory: geoaxis
+
       - name: Build site
         run: zola build --base-url https://jankopacek.github.io/geoaxis
         working-directory: geoaxis
