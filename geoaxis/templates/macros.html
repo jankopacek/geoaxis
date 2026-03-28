@@ -1,0 +1,16 @@
+{% macro breadcrumbs(ancestors, title) %}
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+        <ol class="breadcrumb mb-0 py-2">
+            <li class="breadcrumb-item"><a href="{{ get_url(path='@/_index.md') }}">{{ trans(key="home", lang=lang) }}</a></li>
+            {% for ancestor_path in ancestors %}
+                {% if not loop.first %}
+                    {% set ancestor = get_section(path=ancestor_path) %}
+                    <li class="breadcrumb-item"><a href="{{ ancestor.permalink }}">{{ ancestor.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+            <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
+        </ol>
+    </div>
+</nav>
+{% endmacro breadcrumbs %}

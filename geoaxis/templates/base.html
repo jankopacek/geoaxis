@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-hero">
             <div class="container">
                 <a class="navbar-brand" href="{{ get_url(path='@/_index.md') }}">Geoaxis</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="{{ trans(key="toggle_nav", lang=lang) }}">
@@ -36,7 +36,10 @@
         </nav>
     </header>
 
-    {% block breadcrumbs %}{% endblock breadcrumbs %}
+    <div class="hero text-white">
+        {% block breadcrumbs %}{% endblock breadcrumbs %}
+        {% block page_header %}{% endblock page_header %}
+    </div>
 
     <main>
         {% block content %}{% endblock content %}

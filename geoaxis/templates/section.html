@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block title %}{{ section.title }} — Geoaxis{% endblock title %}
 
@@ -6,33 +7,20 @@
 
 {% block breadcrumbs %}
 {% if section.ancestors | length > 1 %}
-<nav aria-label="breadcrumb" class="breadcrumb-nav">
-    <div class="container">
-        <ol class="breadcrumb mb-0 py-2">
-            <li class="breadcrumb-item"><a href="{{ get_url(path='@/_index.md') }}">{{ trans(key="home", lang=lang) }}</a></li>
-            {% for ancestor_path in section.ancestors %}
-                {% if not loop.first %}
-                    {% set ancestor = get_section(path=ancestor_path) %}
-                    <li class="breadcrumb-item"><a href="{{ ancestor.permalink }}">{{ ancestor.title }}</a></li>
-                {% endif %}
-            {% endfor %}
-            <li class="breadcrumb-item active" aria-current="page">{{ section.title }}</li>
-        </ol>
-    </div>
-</nav>
+{{ macros::breadcrumbs(ancestors=section.ancestors, title=section.title) }}
 {% endif %}
 {% endblock breadcrumbs %}
 
-{% block content %}
-<section class="bg-primary text-white py-5">
-    <div class="container text-center">
-        <h1 class="display-4 fw-bold">{{ section.title }}</h1>
-        {% if section.description %}
-        <p class="lead">{{ section.description }}</p>
-        {% endif %}
-    </div>
-</section>
+{% block page_header %}
+<div class="container text-center py-5">
+    <h1 class="display-4 fw-bold">{{ section.title }}</h1>
+    {% if section.description %}
+    <p class="lead">{{ section.description }}</p>
+    {% endif %}
+</div>
+{% endblock page_header %}
 
+{% block content %}
 <section class="py-5">
     <div class="container">
         {{ section.content | safe }}

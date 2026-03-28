@@ -4,16 +4,16 @@
 
 {% block description %}{{ section.description | default(value='') }}{% endblock description %}
 
-{% block content %}
-<section class="hero bg-primary text-white py-5">
-    <div class="container text-center">
-        <h1 class="display-4 fw-bold">{{ section.title }}</h1>
-        {% if section.description %}
-        <p class="lead">{{ section.description }}</p>
-        {% endif %}
-    </div>
-</section>
+{% block page_header %}
+<div class="container text-center py-5">
+    <h1 class="display-4 fw-bold">{{ section.title }}</h1>
+    {% if section.description %}
+    <p class="lead">{{ section.description }}</p>
+    {% endif %}
+</div>
+{% endblock page_header %}
 
+{% block content %}
 <section class="py-5">
     <div class="container">
         {{ section.content | safe }}
