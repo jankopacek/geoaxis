@@ -37,6 +37,7 @@
     </header>
 
     <div class="hero text-white">
+        <canvas id="laser-bg" aria-hidden="true"></canvas>
         {% block breadcrumbs %}{% endblock breadcrumbs %}
         {% block page_header %}{% endblock page_header %}
     </div>
@@ -71,6 +72,7 @@
     </footer>
 
     <script src="{{ get_url(path='js/bootstrap.bundle.min.js') }}" defer></script>
+    <script src="{{ get_url(path='js/laser.js') }}" defer></script>
     {% block scripts %}{% endblock scripts %}
 </body>
 </html>
