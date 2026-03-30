@@ -25,11 +25,25 @@
                         {% for subsection_path in index.subsections %}
                             {% set subsection = get_section(path=subsection_path) %}
                             {% if not subsection.extra.hide_from_nav %}
+                            {% if subsection.pages %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle{% if current_path and current_path is starting_with(subsection.path) %} active{% endif %}" href="{{ subsection.permalink }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ subsection.title }}</a>
+                                <ul class="dropdown-menu">
+                                    {% for page in subsection.pages %}
+                                    <li><a class="dropdown-item{% if current_path and current_path == page.path %} active{% endif %}" href="{{ page.permalink }}">{{ page.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            {% else %}
                             <li class="nav-item">
                                 <a class="nav-link{% if current_path and current_path is starting_with(subsection.path) %} active{% endif %}" href="{{ subsection.permalink }}">{{ subsection.title }}</a>
                             </li>
                             {% endif %}
+                            {% endif %}
                         {% endfor %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#kontakt">{{ trans(key="contact", lang=lang) }}</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +60,7 @@
         {% block content %}{% endblock content %}
     </main>
 
-    <footer class="bg-dark text-light py-4 mt-5">
+    <footer id="kontakt" class="bg-dark text-light py-4 mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-3 mb-md-0">

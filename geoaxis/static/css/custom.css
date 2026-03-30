@@ -69,6 +69,44 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.5px;
 }
 
+/* Dropdown menu — dark theme */
+.navbar .dropdown-menu {
+    background-color: #1e3a5f;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    margin-top: 0;
+}
+
+.navbar .dropdown-item {
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.5rem 1.25rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.navbar .dropdown-item.active {
+    background-color: #1a56db;
+    color: #fff;
+}
+
+/* Desktop: open dropdown on hover */
+@media (min-width: 992px) {
+    .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+
+    .navbar .dropdown > .dropdown-toggle:active {
+        pointer-events: none;
+    }
+}
+
 /* Muted/secondary text */
 .text-muted {
     color: #94a3b8;
