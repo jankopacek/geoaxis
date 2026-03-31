@@ -3,6 +3,9 @@ title = "Letecké snímkování"
 description = "Služby s využitím technologie UAV (dronu)"
 date = 2026-03-24
 weight = 5
+
+[extra]
+icon_class = "icon-bg-letecke-snimkovani"
 +++
 
 V rámci zlepšení našich služeb a zefektivnění naší práce využíváme technologie UAV (dronu):

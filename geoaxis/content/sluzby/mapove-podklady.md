@@ -3,6 +3,9 @@ title = "Mapové podklady"
 description = "Mapové podklady pro projektanty, architekty a techniky"
 date = 2026-03-24
 weight = 3
+
+[extra]
+icon_class = "icon-bg-mapove-podklady"
 +++
 
 Mapové podklady jsou základním prvkem pro práci projektantů, architektů, techniků:

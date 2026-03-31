@@ -3,6 +3,9 @@ title = "Inženýrská geodézie"
 description = "Komplexní dokumentace inženýrských sítí a vytyčovací práce"
 date = 2026-03-24
 weight = 2
+
+[extra]
+icon_class = "icon-bg-inzenyrska-geodezie"
 +++
 
 ## Pro komplexní dokumentaci jednotlivých inženýrských sítí zajišťujeme

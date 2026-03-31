@@ -3,6 +3,9 @@ title = "Geometrické plány"
 description = "Vyhotovení všech druhů geometrických plánů a vytyčení hranic pozemků"
 date = 2026-03-24
 weight = 1
+
+[extra]
+icon_class = "icon-bg-geometricke-plany"
 +++
 
 ## Vyhotovíme Vám všechny druhy geometrických plánů

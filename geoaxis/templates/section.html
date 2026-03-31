@@ -30,7 +30,7 @@
             {% for page in section.pages %}
             <div class="col-md-6 col-lg-4">
                 <a href="{{ page.permalink }}" class="card-link">
-                    <div class="card h-100">
+                    <div class="card h-100 {{ page.extra.icon_class | default(value='') }}">
                         <div class="card-body">
                             <h3 class="card-title h5">{{ page.title }}</h3>
                             {% if page.description %}
