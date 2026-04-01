@@ -11,14 +11,26 @@
 
 {% block page_header %}
 <div class="container py-4">
-    <h1 class="display-5 fw-bold">{{ page.title }}</h1>
+    <div class="d-flex align-items-center gap-3">
+        {% if page.extra.icon_class %}
+        <div class="page-hero-icon {{ page.extra.icon_class }}"></div>
+        {% endif %}
+        <div>
+            <h1 class="display-5 fw-bold mb-0">{{ page.title }}</h1>
+            {% if page.description %}
+            <p class="lead mb-0 mt-2 text-white-75">{{ page.description }}</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock page_header %}
 
 {% block content %}
 <section class="py-5">
     <div class="container">
-        {{ page.content | safe }}
+        <div class="content-card">
+            {{ page.content | safe }}
+        </div>
     </div>
 </section>
 {% endblock content %}
