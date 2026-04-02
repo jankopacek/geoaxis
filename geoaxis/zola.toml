@@ -21,6 +21,7 @@ theme = "catppuccin-mocha"
 toggle_nav = "Přepnout navigaci"
 home = "Úvodní stránka"
 contact = "Kontakt"
+address = "Adresa"
 
 [languages.en]
 title = "Geoaxis"
@@ -29,6 +30,7 @@ title = "Geoaxis"
 toggle_nav = "Toggle navigation"
 home = "Home"
 contact = "Contact"
+address = "Address"
 
 [extra]
 # Put all your custom variables here

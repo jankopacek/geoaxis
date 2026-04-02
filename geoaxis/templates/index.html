@@ -18,7 +18,11 @@
     <div class="container">
         {{ section.content | safe }}
 
-        {% set sluzby = get_section(path="sluzby/_index.md") %}
+        {% if lang == "en" %}
+            {% set sluzby = get_section(path="sluzby/_index.en.md") %}
+        {% else %}
+            {% set sluzby = get_section(path="sluzby/_index.md") %}
+        {% endif %}
         {% if sluzby.pages %}
         <h2 class="mb-4">{{ sluzby.title }}</h2>
         <div class="row g-4">
