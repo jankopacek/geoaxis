@@ -5,7 +5,8 @@
 {% block description %}{{ section.description | default(value='') }}{% endblock description %}
 
 {% block page_header %}
-<div class="container text-center py-5">
+<div class="container text-center pt-3 pb-4">
+    <img src="{{ get_url(path='img/logo.png') }}" alt="Geoaxis" class="hero-logo mb-2" width="140" height="140">
     <h1 class="display-4 fw-bold">{{ section.title }}</h1>
     {% if section.description %}
     <p class="lead">{{ section.description }}</p>

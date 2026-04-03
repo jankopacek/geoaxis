@@ -103,6 +103,26 @@ footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
     letter-spacing: 0.5px;
 }
 
+.navbar-brand img {
+    height: 74px;
+    width: auto;
+    mix-blend-mode: screen;
+    filter: grayscale(1) brightness(3);
+}
+
+.hero-logo {
+    height: 140px;
+    width: auto;
+    mix-blend-mode: screen;
+    filter: grayscale(1) brightness(3);
+}
+
+@media (max-width: 576px) {
+    .hero-logo {
+        height: 100px;
+    }
+}
+
 /* Dropdown menu — dark theme */
 .navbar .dropdown-menu {
     background-color: #1e3a5f;
