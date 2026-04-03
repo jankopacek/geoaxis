@@ -94,7 +94,7 @@
                     <h5>{{ trans(key="contact", lang=lang) }}</h5>
                     <p class="mb-1">Ing. Olga Kopáčková</p>
                     <p class="mb-1">+420 606 687 912</p>
-                    <p class="mb-0"><a href="mailto:kopackova.o@seznam.cz" class="text-light">kopackova.o@seznam.cz</a></p>
+                    <p class="mb-0"><a href="#" class="text-light email-protected" data-user="olgakopackova" data-domain="geoaxis.cz">&#9993; e-mail</a></p>
                 </div>
             </div>
             <hr class="my-3">
@@ -103,6 +103,7 @@
     </footer>
 
     <script src="{{ get_url(path='js/bootstrap.bundle.min.js') }}" defer></script>
+    <script src="{{ get_url(path='js/email-protect.js') }}" defer></script>
     <script src="{{ get_url(path='js/laser.js') }}" defer></script>
     {% block scripts %}{% endblock scripts %}
 </body>
